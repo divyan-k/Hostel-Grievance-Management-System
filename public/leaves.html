@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaves | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="student" data-page="student-leaves">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Student leaves</p>
+          <h1 id="dashboard-title">Leave center</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/student.html">Dashboard</a>
+          <a class="btn btn-secondary" href="/complaints.html">Complaints</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <h2>Request leave</h2>
+          <form id="leave-form" class="stack-form compact">
+            <label>Reason<textarea name="reason" rows="3" placeholder="Reason for leave" required></textarea></label>
+            <label>From<input type="date" name="fromDate" required /></label>
+            <label>To<input type="date" name="toDate" required /></label>
+            <button class="btn btn-primary" type="submit">Submit leave</button>
+          </form>
+        </article>
+        <article class="glass panel wide">
+          <h2>Your leaves</h2>
+          <p class="muted section-copy">Every request and approval stays visible in one place.</p>
+          <div id="leaves-list" class="card-list"></div>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

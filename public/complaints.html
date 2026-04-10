@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaints | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="student" data-page="student-complaints">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Student complaints</p>
+          <h1 id="dashboard-title">Complaint center</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/student.html">Dashboard</a>
+          <a class="btn btn-secondary" href="/leaves.html">Leaves</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <h2>Raise a complaint</h2>
+          <form id="complaint-form" class="stack-form compact">
+            <label>Category<input type="text" name="category" placeholder="Electrical, Hygiene..." required /></label>
+            <label>Issue<textarea name="issue" rows="4" placeholder="Describe the issue" required></textarea></label>
+            <button class="btn btn-primary" type="submit">Submit complaint</button>
+          </form>
+        </article>
+        <article class="glass panel wide">
+          <h2>Your complaints</h2>
+          <p class="muted section-copy">Track progress without chasing wardens or staff in person.</p>
+          <div id="complaints-list" class="card-list"></div>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

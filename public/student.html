@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="student" data-page="student-dashboard">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Student dashboard</p>
+          <h1 id="dashboard-title">Your hostel requests</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/complaints.html">Complaints</a>
+          <a class="btn btn-secondary" href="/leaves.html">Leaves</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="stats-grid" id="student-stats"></section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <a class="summary-link" href="/complaints.html">
+            <p class="eyebrow">Complaints</p>
+            <h2>Open your complaint page</h2>
+            <p class="muted section-copy">Create new complaints and view all complaint updates in a dedicated page.</p>
+            <div class="summary-foot">
+              <span class="role-chip" id="complaints-count">0 total</span>
+              <span class="summary-arrow">Open</span>
+            </div>
+          </a>
+        </article>
+        <article class="glass panel">
+          <a class="summary-link" href="/leaves.html">
+            <p class="eyebrow">Leaves</p>
+            <h2>Open your leave page</h2>
+            <p class="muted section-copy">Submit leave requests and review approval history without extending the dashboard.</p>
+            <div class="summary-foot">
+              <span class="role-chip" id="leaves-count">0 total</span>
+              <span class="summary-arrow">Open</span>
+            </div>
+          </a>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

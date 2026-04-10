@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="admin" data-page="admin-dashboard">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Warden / Chief dashboard</p>
+          <h1 id="dashboard-title">Operational command center</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/admin-complaints.html">Complaints</a>
+          <a class="btn btn-secondary" href="/admin-leaves.html">Leaves</a>
+          <a class="btn btn-secondary chief-only-nav" id="admin-users-link" href="/admin-users.html">Users</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="stats-grid" id="admin-stats"></section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <a class="summary-link" href="/admin-complaints.html">
+            <p class="eyebrow">Complaints</p>
+            <h2>Open complaint operations</h2>
+            <p class="muted section-copy">Monitor unresolved issues, assign staff, and intervene when service slows down.</p>
+            <div class="summary-foot">
+              <span class="role-chip" id="admin-complaints-count">0 total</span>
+              <span class="summary-arrow">Open</span>
+            </div>
+          </a>
+        </article>
+        <article class="glass panel">
+          <a class="summary-link" href="/admin-leaves.html">
+            <p class="eyebrow">Leaves</p>
+            <h2>Open leave oversight</h2>
+            <p class="muted section-copy">Wardens and chiefs get full visibility while guards remain the approval gate.</p>
+            <div class="summary-foot">
+              <span class="role-chip" id="admin-leaves-count">0 total</span>
+              <span class="summary-arrow">Open</span>
+            </div>
+          </a>
+        </article>
+        <article class="glass panel">
+          <h2>Staff directory</h2>
+          <p class="muted section-copy">Use these staff members when assigning maintenance and issue handling.</p>
+          <div id="staff-directory" class="card-list"></div>
+        </article>
+        <article class="glass panel chief-only" id="user-create-panel">
+          <h2>Create admin-side user</h2>
+          <form id="user-create-form" class="stack-form compact">
+            <label>Name<input type="text" name="name" required /></label>
+            <label>Email<input type="email" name="email" required /></label>
+            <label>Password<input type="password" name="password" required /></label>
+            <label>
+              Role
+              <select name="role" required>
+                <option value="staff">Staff</option>
+                <option value="guard">Guard</option>
+                <option value="warden">Warden</option>
+                <option value="chief">Chief</option>
+              </select>
+            </label>
+            <label>Room / zone<input type="text" name="room" /></label>
+            <button class="btn btn-primary" type="submit">Create user</button>
+          </form>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

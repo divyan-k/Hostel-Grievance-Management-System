@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Dashboard | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="staff" data-page="staff-dashboard">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Staff dashboard</p>
+          <h1 id="dashboard-title">Assigned complaints</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/staff-complaints.html">Complaints</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="stats-grid" id="staff-stats"></section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <a class="summary-link" href="/staff-complaints.html">
+            <p class="eyebrow">Complaints</p>
+            <h2>Open complaint queue</h2>
+            <p class="muted section-copy">Update the complaints assigned to you and keep the hostel informed.</p>
+            <div class="summary-foot">
+              <span class="role-chip" id="staff-complaints-count">0 total</span>
+              <span class="summary-arrow">Open</span>
+            </div>
+          </a>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

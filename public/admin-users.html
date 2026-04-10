@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Users | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="admin" data-page="admin-users">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Chief user directory</p>
+          <h1 id="dashboard-title">User management</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/admin.html">Dashboard</a>
+          <a class="btn btn-secondary" href="/admin-complaints.html">Complaints</a>
+          <a class="btn btn-secondary" href="/admin-leaves.html">Leaves</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <h2>Create admin-side user</h2>
+          <form id="user-create-form" class="stack-form compact">
+            <label>Name<input type="text" name="name" required /></label>
+            <label>Email<input type="email" name="email" required /></label>
+            <label>Password<input type="password" name="password" required /></label>
+            <label>
+              Role
+              <select name="role" required>
+                <option value="staff">Staff</option>
+                <option value="guard">Guard</option>
+                <option value="warden">Warden</option>
+                <option value="chief">Chief</option>
+              </select>
+            </label>
+            <label>Room / zone<input type="text" name="room" /></label>
+            <button class="btn btn-primary" type="submit">Create user</button>
+          </form>
+        </article>
+        <article class="glass panel wide" id="directory-overview-panel">
+          <h2>Full user directory</h2>
+          <p class="muted section-copy">Chief-only visibility across students and operations staff.</p>
+          <div id="directory-overview" class="card-list"></div>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

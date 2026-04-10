@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guard Dashboard | HostelFlow</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body data-role-page="guard" data-page="guard-dashboard">
+    <main class="shell dashboard-shell">
+      <section class="glass topbar">
+        <div>
+          <p class="eyebrow">Guard dashboard</p>
+          <h1 id="dashboard-title">Leave approvals</h1>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-secondary" href="/guard-leaves.html">Leaves</a>
+          <a class="btn btn-secondary" href="/profile.html">Profile</a>
+          <button class="btn btn-ghost" id="logout-btn" type="button">Logout</button>
+        </div>
+      </section>
+      <section class="stats-grid" id="guard-stats"></section>
+      <section class="dashboard-grid">
+        <article class="glass panel">
+          <a class="summary-link" href="/guard-leaves.html">
+            <p class="eyebrow">Leaves</p>
+            <h2>Open leave approvals</h2>
+            <p class="muted section-copy">Review student requests quickly and keep departure records organized.</p>
+            <div class="summary-foot">
+              <span class="role-chip" id="guard-leaves-count">0 total</span>
+              <span class="summary-arrow">Open</span>
+            </div>
+          </a>
+        </article>
+      </section>
+      <div id="message" class="message floating"></div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
